@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Year');
+        data.addColumn('number', 'Births');
+        data.addColumn({type:'string', role:'annotation'}); // annotation role col.
+        data.addColumn({type:'string', role:'annotationText'}); // annotationText col.
+        data.addColumn('number', 'Deaths');
+        data.addColumn({type:'string', role:'annotation'}); // annotation role col.
+        data.addColumn({type:'string', role:'annotationText'}); // annotationText col.
+
+        data.addRows([
+        ['1933',2081232,null,null,1342106,null,null],
+        ['1934',2167636,null,null,1396903,null,null],
+        ['1935',2155105,null,null,1392752,null,null],
+        ['1936',2144790,null,null,1479228,null,null],
+        ['1937',2203337,null,null,1450427,null,null],
+        ['1938',2286962,null,null,1381391,null,null],
+        ['1939',2265588,null,null,1387897,null,null],
+        ['1940',2360399,null,null,1417269,null,null],
+        ['1941',2513427,null,null,1397642,null,null],
+        ['1942',2808996,null,null,1385187,null,null],
+        ['1943',2934860,null,null,1459544,null,null],
+        ['1944',2794800,null,null,1411338,null,null],
+        ['1945',2735456,null,null,1401719,null,null],
+        ['1946',3288672,'A','1946: Start of Baby Boom',1395617,null,null],
+        ['1947',3699940,null,null,1445370,null,null],
+        ['1948',3535068,null,null,1444337,null,null],
+        ['1949',3559529,null,null,1443607,null,null],
+        ['1950',3554149,null,null,1452454,null,null],
+        ['1951',3750850,null,null,1482099,null,null],
+        ['1952',3846986,null,null,1496838,null,null],
+        ['1953',3902120,null,null,1517541,null,null],
+        ['1954',4017362,null,null,1481091,null,null],
+        ['1955',4047295,null,null,1528717,null,null],
+        ['1956',4163090,null,null,1564476,null,null],
+        ['1957',4254784,null,null,1633128,null,null],
+        ['1958',4203812,null,null,1647886,null,null],
+        ['1959',4244796,null,null,1656814,null,null],
+        ['1960',4257850,null,null,1711982,null,null],
+        ['1961',4268326,null,null,1701522,null,null],
+        ['1962',4167362,null,null,1756720,null,null],
+        ['1963',4098020,null,null,1813549,null,null],
+        ['1964',4027490,'B','1964: Start of Generation X',1798051,null,null],
+        ['1965',3760358,null,null,1828136,null,null],
+        ['1966',3606274,null,null,1863149,null,null],
+        ['1967',3520959,null,null,1851323,null,null],
+        ['1968',3501564,null,null,1930082,null,null],
+        ['1969',3600206,null,null,1921990,null,null],
+        ['1970',3731386,null,null,1921031,null,null],
+        ['1971',3555970,null,null,1927542,null,null],
+        ['1972',3258411,null,null,1963944,null,null],
+        ['1973',3136965,null,null,1973003,null,null],
+        ['1974',3159958,null,null,1934388,null,null],
+        ['1975',3144198,null,null,1892879,null,null],
+        ['1976',3167788,null,null,1909440,null,null],
+        ['1977',3326632,null,null,1899597,null,null],
+        ['1978',3333279,null,null,1927788,null,null],
+        ['1979',3494398,null,null,1913841,null,null],
+        ['1980',3612258,null,null,1989841,null,null],
+        ['1981',3629238,null,null,1977981,null,null],
+        ['1982',3680537,'C','1982: Start of Millennial Generation',1974797,null,null],
+        ['1983',3638933,null,null,2019201,null,null],
+        ['1984',3669141,null,null,2039369,null,null],
+        ['1985',3760561,null,null,2086440,null,null],
+        ['1986',3756547,null,null,2105361,null,null],
+        ['1987',3809394,null,null,2123323,null,null],
+        ['1988',3909510,null,null,2167999,null,null],
+        ['1989',4040958,null,null,2150466,null,null],
+        ['1990',4158212,null,null,2148463,null,null],
+        ['1991',4110907,null,null,2169518,null,null],
+        ['1992',4065014,null,null,2175613,null,null],
+        ['1993',4000240,null,null,2268553,null,null],
+        ['1994',3952767,null,null,2278994,null,null],
+        ['1995',3899589,null,null,2312132,null,null],
+        ['1996',3891494,null,null,2314690,null,null],
+        ['1997',3880894,null,null,2314245,null,null],
+        ['1998',3941553,null,null,2337256,null,null],
+        ['1999',3959417,null,null,2391399,null,null],
+        ['2000',4058814,'D','2000: Start of as-yet-unnamed generation',2403351,null,null],
+        ['2001',4025933,null,null,2416425,null,null],
+        ['2002',4021726,null,null,2443387,null,null],
+        ['2003',4089950,null,null,2448288,null,null],
+        ['2004',4112052,null,null,2397615,null,null],
+        ['2005',4138349,null,null,2448017,null,null],
+        ['2006',4265555,null,null,2426264,null,null],
+        ['2007',4316233,null,null,2423712,null,null],
+        ['2008',4247694,null,null,2471984,null,null],
+        ['2009',4130665,null,null,2437163,null,null],
+        ['2010',3999386,null,null,2468435,null,null],
+        ['2011',3953590,null,null,2515458,null,null],
+        ['2012',3952841,null,null,2543279,null,null],
+        ['2013',3932181,null,null,2596993,null,null],
+        ['2014',3988076,null,null,2626418,null,null],
+        ['2015',3978497,null,null,2712630,null,null],
+        ['2016',3945875,null,null,2744248,'E','2016: The ratio of births to deaths is the smallest since the 1930s']
+        ]);
+
+        var options = {
+          width: 750,
+          chartArea: {'width': '80%', 'height': '80%'},
+          series: {
+            0: { color: '2196F3' },
+            1: { color: 'EF5350' }
+          },
+          annotations: {
+            textStyle: {
+              color: '#707070',
+            }
+          },
+          title: 'U.S. Births and Deaths 1933-2016',
+          legend: {
+            position: 'bottom',
+            textStyle: {
+              color: '#CCC',
+              fontSize: 12
+            }
+          },
+          hAxis: {
+            slantedText: true,
+            textStyle: {
+                color: '#CCC',
+                fontSize: 12
+            }
+          },
+          vAxis: {
+            textStyle: {
+              color: '#CCC',
+              fontSize: 12
+            },
+            minValue: 0,
+            ticks: [1000000, 2000000, 3000000, 4000000, 5000000]
+          },
+          titleTextStyle: { fontSize: 22, color: '#707070' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        var formatter = new google.visualization.NumberFormat(
+            {pattern: '###,###'});
+        formatter.format(data, 1);
+        formatter.format(data, 2);
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
